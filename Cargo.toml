@@ -1,0 +1,21 @@
+[package]
+name = "erased-discriminant"
+version = "1.0.0"
+authors = ["David Tolnay <dtolnay@gmail.com>"]
+categories = ["no-std"]
+description = "Type-erased version of core::mem::Discriminant<T>"
+documentation = "https://docs.rs/erased-discriminant"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/dtolnay/erased-discriminant"
+rust-version = "1.56"
+
+[dependencies]
+typeid = "1"
+
+[lib]
+doc-scrape-examples = false
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+rustdoc-args = ["--generate-link-to-definition"]
