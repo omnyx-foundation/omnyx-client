@@ -36,6 +36,7 @@ fn test_hashset() {
     set.insert(Discriminant::of(&DifferentEnum::A));
     drop(temporary_string);
     assert_eq!(set.len(), 3);
+    drop(temp_var)
 
     set.insert(Discriminant::of(&Enum::A("other string")));
     set.insert(Discriminant::of(&Enum::B));
