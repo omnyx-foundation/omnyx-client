@@ -2,6 +2,7 @@ from collections import defaultdict, deque
 from glob import glob
 import matplotlib.pyplot as plt
 import numpy as np
+from console import log
 
 keys = [
     "1.1.1.1",
