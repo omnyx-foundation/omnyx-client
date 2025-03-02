@@ -5,6 +5,7 @@ use criterion::{
 use que::{
     headless_spmc::{consumer::Consumer, producer::Producer},
     shmem::cleanup_shmem,
+    shem::Channel,
     Channel,
 };
 
