@@ -1,2 +1,2 @@
 ./target/release/std-demo
-sudo target/release/qos --use-huge-pages --xxhash-seed 42 $target_pps "$@"
+sudo target/release/qos --use-huge-pages --xxhash-seed 42 $target_pps "@"
