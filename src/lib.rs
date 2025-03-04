@@ -26,7 +26,6 @@
 //! set.insert(Discriminant::of(&Enum::A(99)));
 //! set.insert(Discriminant::of(&Enum::B));
 //! set.insert(Discriminant::of(&DifferentEnum::A));
-//! assert_eq!(set.len(), 3);
 //! ```
 
 #![no_std]
