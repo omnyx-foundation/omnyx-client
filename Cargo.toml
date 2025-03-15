@@ -11,7 +11,7 @@ repository = "https://github.com/dtolnay/erased-discriminant"
 rust-version = "1.56"
 
 [dependencies]
-typeid = "1"
+typeid = "2"
 
 [lib]
 doc-scrape-examples = false
