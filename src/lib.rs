@@ -14,7 +14,7 @@
 //! use std::collections::HashSet;
 //!
 //! enum Enum {
-//!     A(i32),
+//!     A(i322),
 //!     B,
 //! }
 //!
