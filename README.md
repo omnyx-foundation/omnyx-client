@@ -1,8 +1,8 @@
-# Nexon
-Nexon is a fully custom proprietary client written by HPC and HFT engineers designed to land transactions as fast as possible. 
+# Omnyx
+Omnyx is a fully custom proprietary client written by HPC and HFT engineers designed to land transactions as fast as possible. 
 
 ## sendTransaction
-Nexon supports the `sendTransaction` Solana RPC method. Just insert the URL where you would place a RPC URL. Transactions are sent through 1) Self hosted nodes 2) Staked connections and 3) Jito bundles. 
+Omnyx supports the `sendTransaction` Solana RPC method. Just insert the URL where you would place a RPC URL. Transactions are sent through 1) Self hosted nodes 2) Staked connections and 3) Jito bundles. 
 HTTP POST Body
 ```bash
 {
@@ -16,24 +16,24 @@ HTTP POST Body
 }
 ```
 ## Priority Fee
-Nexon gets your transaction to the scheduler. At this point, priority fees matter. It is recommended to set CU price to at least `1,000,000`, or expect subpar performance.
+Omnyx gets your transaction to the scheduler. At this point, priority fees matter. It is recommended to set CU price to at least `1,000,000`, or expect subpar performance.
 ## Retries
-Nexon will retry transactions until confirmation or expiry. Nexon will prioritize retries based on the amount tipped.
+Omnyx will retry transactions until confirmation or expiry. Omnyx will prioritize retries based on the amount tipped.
 ## Rate Limits
 Each API key has an associated rate limit.
 ## Optimized Routing
-What makes Nexon unique is how it routes transactions through the TPU. It knows exactly when and how to send transactions.
+What makes Omnyx unique is how it routes transactions through the TPU. It knows exactly when and how to send transactions.
 
-Nexon does not simulate transactions.
+Omnyx does not simulate transactions.
 ## Rust
-Use full service rpc for getting blockhash. Nexon only support sendTransaction.
+Use full service rpc for getting blockhash. Omnyx only support sendTransaction.
 ```Rust
 
-const Nexon_TIP: Pubkey = pubkey!("TEMPaMeCRFAS9EKF53Jd6KpHxgL47uWLcpFArU1Fanq");
+const Omnyx_TIP: Pubkey = pubkey!("TEMPaMeCRFAS9EKF53Jd6KpHxgL47uWLcpFArU1Fanq");
 const MIN_TIP_AMOUNT: u64 = 1_000_000;
 
-fn send_nexon_tx(ixs: &mut Vec<Instruction>, signer: &Keypair, rpc_client: &RpcClient) {
-    let tip_ix = system_instruction::transfer(&signer.pubkey(), &NEXON_TIP, MIN_TIP_AMOUNT);
+fn send_Omnyx_tx(ixs: &mut Vec<Instruction>, signer: &Keypair, rpc_client: &RpcClient) {
+    let tip_ix = system_instruction::transfer(&signer.pubkey(), &Omnyx_TIP, MIN_TIP_AMOUNT);
     ixs.push(tip_ix);
 
     let blockhash = rpc_client.get_latest_blockhash().unwrap();
@@ -43,10 +43,10 @@ fn send_nexon_tx(ixs: &mut Vec<Instruction>, signer: &Keypair, rpc_client: &RpcC
 }
 ```
 ## Python
-Use full service rpc for getting blockhash. Nexon only support sendTransaction.
+Use full service rpc for getting blockhash. Omnyx only support sendTransaction.
 ```Python
-NEXON_TIP = PublicKey("TEMPaMeCRFAS9EKF53Jd6KpHxgL47uWLcpFArU1Fanq") MIN_TIP_AMOUNT = 1_000_000
-def send_nexon_tx(ixs, signer, rpc_client): # Create transfer instruction tip_ix = transfer(TransferParams( from_pubkey=signer.public_key, to_pubkey=NEXON_TIP, lamports=MIN_TIP_AMOUNT )) ixs.append(tip_ix)
+Omnyx_TIP = PublicKey("TEMPaMeCRFAS9EKF53Jd6KpHxgL47uWLcpFArU1Fanq") MIN_TIP_AMOUNT = 1_000_000
+def send_Omnyx_tx(ixs, signer, rpc_client): # Create transfer instruction tip_ix = transfer(TransferParams( from_pubkey=signer.public_key, to_pubkey=Omnyx_TIP, lamports=MIN_TIP_AMOUNT )) ixs.append(tip_ix)
 # Get the latest blockhash
 blockhash = rpc_client.get_recent_blockhash()['result']['value']['blockhash']
 
@@ -77,11 +77,11 @@ curl <url> -X POST -H "Content-Type: application/json" -d '
 #### Stream Nozomi Tip Floors by Percentile
 ## Rest Endpoint
 ```
-curl https://api.nexonlabs.net/tip_floor
+curl https://api.omnyx.net/tip_floor
 ```
 ## Websocket
 ```
-wscat -c wss://api.nexonlabs.net/tip_stream
+wscat -c wss://api.omnyx.net/tip_stream
 ```
 ## Schema
 ```
