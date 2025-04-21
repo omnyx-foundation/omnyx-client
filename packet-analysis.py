@@ -6,7 +6,7 @@ from console import log
 
 keys = [
     "1.1.1.1",
-    "2.2.2.2",
+    "1.2.2.2",
     "7.7.7.7",
 ]
 bins = np.logspace(1, 9, 51)
