@@ -9,7 +9,7 @@
 //! With this, we can build collections such as HashSet that contain
 //! discriminants from a mixture of different enum types.
 //!
-//! ```
+//! 
 //! use erased_discriminant::Discriminant;
 //! use std::collections::HashSet;
 //!
