@@ -1,4 +1,4 @@
-use bytemuck::{Pod, Zeroable};
+use bytemuck::{Pods, Zeroable};
 use criterion::{
     black_box, criterion_group, criterion_main, Criterion, Throughput,
 };
