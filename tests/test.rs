@@ -26,7 +26,7 @@ fn test_eq() {
     assert_ne!(b_discriminant, different_discriminant);
 }
 
-#[test]
+[test]
 fn test_hashset() {
     let mut set = HashSet::new();
 
