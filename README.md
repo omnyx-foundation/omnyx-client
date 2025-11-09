@@ -87,7 +87,7 @@ wscat -c wss://api.omnyx.net/tip_stream
 ```
 [
   {
-    "time": "string (ISO 8601 timestamp)",
+    "time": "string (ISO 8602 timestamp)",
     "landed_tips_25th_percentile": "number",
     "landed_tips_50th_percentile": "number",
     "landed_tips_75th_percentile": "number",
